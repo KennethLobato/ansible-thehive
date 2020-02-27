@@ -4,7 +4,7 @@
 thehive_install_repo: true
 
 # TheHive version to lock and install
-thehive_version: 3.2.1
+thehive_version: 3.4.0
 
 # Note that the mappings and seed data are dependent on the schema version.
 # If you are installing a version of TheHive that uses a different index name,
