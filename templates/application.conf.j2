@@ -11,7 +11,6 @@ search {
   # Name of the ElasticSearch cluster
   cluster = {{ thehive_es['cluster'] }}
   # Address of the ElasticSearch instance
-  host = ["{{ thehive_es['endpoint'] }}"]
 }
 
 auth {
@@ -63,7 +62,7 @@ play.modules.enabled += connectors.cortex.CortexConnector
 cortex {
   {% for cortex_server_name, cortex_server_options in thehive_cortex_servers.items() %}
   "{{ cortex_server_name }}" {
-    {% for k, v in cortex_server_options.items() -%}
+    {% for k, v in cortex_server_options.items() -%}ex
       {{ k }}="{{ v }}"
     {% endfor %}
 
