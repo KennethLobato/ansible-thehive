@@ -73,7 +73,7 @@ thehive_auth_ldap:
 thehive_es:
   index: thehive
   cluster: thehive
-  endpoint: 127.0.0.1:9200
+  endpoint: localhost:9200
 
 # Packages that will be installed with TheHive
 thehive_packages:

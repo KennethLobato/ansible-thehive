@@ -10,4 +10,4 @@
   shell: systemctl daemon-reload
 
 - name: wait for the service to come up
-  wait_for: port={{ thehive_http_port }} timeout=30
+  wait_for: port={{ thehive_http_port }} timeout=60
