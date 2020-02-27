@@ -61,9 +61,9 @@ session {
 {% if thehive_cortex_servers is defined %}
 play.modules.enabled += connectors.cortex.CortexConnector
 cortex {
-  {% for cortex_server_name, cortex_server_options in thehive_cortex_servers.iteritems() %}
+  {% for cortex_server_name, cortex_server_options in thehive_cortex_servers.items() %}
   "{{ cortex_server_name }}" {
-    {% for k, v in cortex_server_options.iteritems() -%}
+    {% for k, v in cortex_server_options.items() -%}
       {{ k }}="{{ v }}"
     {% endfor %}
 
@@ -75,9 +75,9 @@ cortex {
 {% if thehive_misp_servers is defined %}
 play.modules.enabled += connectors.misp.MispConnector
 misp {
-  {% for misp_server_name, misp_server_options in thehive_misp_servers.iteritems() %}
+  {% for misp_server_name, misp_server_options in thehive_misp_servers.items() %}
   "{{ misp_server_name }}" {
-    {% for k, v in misp_server_options.iteritems() -%}
+    {% for k, v in misp_server_options.items() -%}
       {% if k == 'tags' %}
         {{ k }}={{ v|to_json}}
       {% else %}
@@ -89,7 +89,7 @@ misp {
   {% endfor %}
 
   {% if thehive_misp_options is defined %}
-    {% for k, v in thehive_misp_options.iteritems() -%}
+    {% for k, v in thehive_misp_options.items() -%}
       {{ k }}="{{ v }}"
     {% endfor %}
   {% endif %}
